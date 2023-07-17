@@ -1,5 +1,4 @@
-// -------------- CREATE do Crud; Ler o que tá no BD --------------
-
+// -------------- CREATE do Crud --------------
 function createUser() {
     const name = document.getElementById('name').value
     const cpf = document.getElementById('cpf').value
@@ -15,7 +14,7 @@ function createUser() {
     form.append('telefone', telefone);
     form.append('email', email);
 
-    const url = 'http://localhost:9090/crudTeste/cadastro.php'; //Url que será usada no fetch
+    const url = 'http://localhost:9090/crud/cadastro.php'; //Url que será usada no fetch
 
     //usando fetch API do javaScript para enviar as informações para o banco de dados
     fetch(url,{
@@ -24,9 +23,40 @@ function createUser() {
     }).then(response =>{ //then É uma promisse, vamos passar o "response"
         response.json().then(result =>{ //outra promisse com o "result". json porque é o formato da resposta que tá no arquivo cadastro.php
             // console.log(result)
-            Swal.fire(result.success);
+            Swal.fire(result.message);
             // console.log(result);
         })
     }).catch(err => console.log(err))     
     
+}
+
+// -------------- READ do Crud --------------
+mostraDados();
+
+function mostraDados() {
+
+    const url = 'http://localhost:9090/crud/read.php';
+
+    fetch(url, {
+        method: "GET"
+    }).then(response => response.text())
+    .then(response => results.innerHTML = response)
+    .catch(err => console.log(err));
+}
+
+// -------------- Delete do Crud --------------
+function remove(id) {
+    const form = new FormData();
+    form.append('id', id);
+
+    const url = 'http://localhost:9090/crud/remove.php';
+
+    fetch(url, {
+        method: 'POST',
+        body: form
+    }).then(response => {
+        response.json().then(data => {
+            console.log(data.message)
+        })
+    }).catch(err => console.log(err))
 }

@@ -17,7 +17,9 @@
 
     // ====================== START: Verificação de Campos vazios ======================
     if (empty($name) || empty($cpf) || empty($endereco) || empty($telefone) || empty($email)) {
-        json_encode(["message" => "Todos os campos precisam ser preenchidos!"]);
+        $message = ["message" => "Todos os campos precisam ser preenchidos!"];
+        header('Content-Type: application/json');
+        echo json_encode($message);
         // ====================== END: Verificação de Campos vazios ======================
     } else {
         // ====================== START: Verificação de Usuário - Se já está cadastrado ======================

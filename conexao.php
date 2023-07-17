@@ -1,4 +1,3 @@
-
 <?php
 // CONEXÃO COM O BANCO DE DADOS
 
