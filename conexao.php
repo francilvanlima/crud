@@ -12,7 +12,5 @@
 
     if($connection->connect_error) { //Retorna msg de erro caso der erro.
         die("Connection Failed".$connection->connect_error); // mata o processo caso dê erro.
-    } //else {
-    // echo (" connected success");
-    // }
+    }
 ?>

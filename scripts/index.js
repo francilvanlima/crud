@@ -22,9 +22,7 @@ function createUser() {
         body:form //Dados que serão enviados definidos acima
     }).then(response =>{ //then É uma promisse, vamos passar o "response"
         response.json().then(result =>{ //outra promisse com o "result". json porque é o formato da resposta que tá no arquivo cadastro.php
-            // console.log(result)
-            Swal.fire(result.message);
-            // console.log(result);
+            Swal.fire(result.success);
         })
     }).catch(err => console.log(err))     
     
