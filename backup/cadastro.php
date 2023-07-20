@@ -25,7 +25,7 @@
         // ====================== START: Verificação de Usuário - Se já está cadastrado ======================
         $str = "SELECT * FROM clientes WHERE cpf='$cpf'";
 
-        $response = $connection->sqlsrv_query($str);
+        $response = $connection->query($str);
 
         if ($response->num_rows > 0) {
             echo json_encode(["message" => "CPF já cadastrado!"]);
@@ -33,7 +33,7 @@
             //variável que recebe um string responsável por transformar os dados em mysql pra INSERIR no bando de dados na tabela clientes.
             $sql = "INSERT INTO clientes(name, cpf, endereco, telefone, email) VALUES('" . $name . "', '" . $cpf . "', '" . $endereco . "', '" . $telefone . "', '" . $email . "')";
 
-            $result = $connection->sqlsrv_query($sql); //Variável connection vem do arquivo config.php
+            $result = $connection->query($sql); //Variável connection vem do arquivo config.php
 
             if (!$result) { //se for diferente de result
                 http_response_code(500);

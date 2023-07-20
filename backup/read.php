@@ -8,7 +8,7 @@ require_once('conexao.php');
 
 $sql = "SELECT * FROM clientes ORDER BY id ASC";
 
-$resultado = $connection->sqlsrv_query($sql);
+$resultado = $connection->query($sql);
 
 if($resultado->num_rows > 0) {
     foreach($resultado as $row) {
