@@ -25,9 +25,13 @@ function createUser() {
     }).then(response =>{ //then É uma promisse, vamos passar o "response"
         response.json().then(result =>{ //outra promisse com o "result". json porque é o formato da resposta que tá no arquivo cadastro.php
             Swal.fire(result.success);
-        })//.setTimeout(() => {
-        //     window.location.reload();
-        //     }, 500);
+            //limpa os campos
+            document.getElementById('name').value = "";
+            document.getElementById('cpf').value = "";
+            document.getElementById('endereco').value = "";
+            document.getElementById('telefone').value = "";
+            document.getElementById('email').value = "";
+        })
     }).catch(err => console.log(err))     
     
 }
