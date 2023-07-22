@@ -6,7 +6,7 @@
 
     $host="localhost"; //onde nosso banco está localizado
     $user="root";
-    $password="sql#Hais23";
+    $password="";
     $dbName="youtube";
 
     $connection = new mysqli($host, $user, $password, $dbName); //variável que fará conexão com o banco de dados. variáveis na ordem.

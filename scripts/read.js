@@ -1,16 +1,10 @@
 // -------------- READ do Crud --------------
-const dados = {
-    aluno: 'Francilvan',
-    idade: '28',
-    sexo: 'Masculino',
-};
-console.log(dados);
 
 mostraDados();
 
 function mostraDados() {
 
-    const url = 'http://localhost:9090/crudTeste/read.php';
+    const url = 'http://localhost:8080/crud/read.php';
 
     fetch(url, {
         method: "GET"

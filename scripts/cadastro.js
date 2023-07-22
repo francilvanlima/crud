@@ -3,19 +3,19 @@
 function createUser() {
     const name = document.getElementById('name').value
     const cpf = document.getElementById('cpf').value
-    const endereco = document.getElementById('endereco').value
-    const telefone = document.getElementById('telefone').value
-    const email = document.getElementById('email').value
+    // const endereco = document.getElementById('endereco').value
+    // const telefone = document.getElementById('telefone').value
+    // const email = document.getElementById('email').value
 
     const form = new FormData()
 
     form.append('name', name);
     form.append('cpf', cpf);
-    form.append('endereco', endereco);
-    form.append('telefone', telefone);
-    form.append('email', email);
+    // form.append('endereco', endereco);
+    // form.append('telefone', telefone);
+    // form.append('email', email);
 
-    const url = 'http://localhost:9090/crudTeste/cadastro.php'; //Url que será usada no fetch
+    const url = 'http://localhost:8080/crud/cadastro.php'; //Url que será usada no fetch
 
     //usando fetch API do javaScript para enviar as informações para o banco de dados
     fetch(url,{
