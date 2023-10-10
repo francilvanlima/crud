@@ -20,7 +20,7 @@ if($resultado->num_rows > 0) {
             echo"<td>".$rows["email"]."</td>";
             echo"<td>
                 <button type='button' class='btn btn-success'>editar</button>
-                <button type='button' class='btn btn-danger' onclick='remove('".$row['id']."')'>excluir</button>
+                <button type='button' class='btn btn-danger' onclick='remove('".$rows['id']."')'>excluir</button>
             </td>";
         echo"</tr>";
     }

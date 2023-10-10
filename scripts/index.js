@@ -14,7 +14,7 @@ function createUser() {
     form.append('telefone', telefone);
     form.append('email', email);
 
-    const url = 'http://localhost:9090/crud/cadastro.php'; //Url que será usada no fetch
+    const url = 'http://localhost:8080/integra_a7/cadastro.php'; //Url que será usada no fetch
 
     //usando fetch API do javaScript para enviar as informações para o banco de dados
     fetch(url,{
@@ -35,7 +35,7 @@ mostraDados();
 
 function mostraDados() {
 
-    const url = 'http://localhost:9090/crud/read.php';
+    const url = 'http://localhost:8080/integra_a7/read.php';
 
     fetch(url, {
         method: "GET"
@@ -49,7 +49,7 @@ function remove(id) {
     const form = new FormData();
     form.append('id', id);
 
-    const url = 'http://localhost:9090/crud/remove.php';
+    const url = 'http://localhost:8080/integra_a7/remove.php';
 
     fetch(url, {
         method: 'POST',
